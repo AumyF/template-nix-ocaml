@@ -1,12 +1,15 @@
 { pkgs ? import <nixpkgs> { } }: pkgs.mkShell {
   buildInputs = [
-    pkgs.ocaml
-    pkgs.ocamlPackages.findlib
     pkgs.dune_2
-    pkgs.ocamlPackages.ocaml-lsp
-    pkgs.ocamlPackages.batteries
-    pkgs.ocamlPackages.utop
+    pkgs.inotify-tools # Enables `dune build -w`
+    pkgs.ocaml
     pkgs.ocamlformat
+    pkgs.ocamlPackages.findlib
     pkgs.ocamlPackages.ocamlformat-rpc-lib
+    pkgs.ocamlPackages.ocaml-lsp
+    pkgs.ocamlPackages.utop
+
+    # External packages
+    pkgs.ocamlPackages.batteries
   ];
 }
