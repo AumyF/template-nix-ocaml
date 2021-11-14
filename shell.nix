@@ -11,5 +11,6 @@
 
     # External packages
     pkgs.ocamlPackages.batteries
+    pkgs.ocamlPackages.alcotest # Testing
   ];
 }
