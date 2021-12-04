@@ -10,11 +10,11 @@
       rec {
         packages = flake-utils.lib.flattenTree
           {
-            mini-ocaml = pkgs.callPackage ./default.nix { };
+            example = pkgs.callPackage ./default.nix { };
           };
-        defaultPackage = packages.mini-ocaml;
-        apps.mini-ocaml = flake-utils.lib.mkApp { drv = packages.mini-ocaml; };
-        defaultApp = apps.mini-ocaml;
+        defaultPackage = packages.example;
+        apps.example = flake-utils.lib.mkApp { drv = packages.example; };
+        defaultApp = apps.example;
         devShell = pkgs.callPackage ./shell.nix { };
       }
     );

@@ -1,8 +1,11 @@
 { pkgs ? import <nixpkgs> { } }: pkgs.ocamlPackages.buildDunePackage {
-  pname = "mini_ocaml";
+  pname = "example";
   version = "0.1.0";
   useDune2 = true;
   src =
     ./.;
-  nativeBuildInputs = [ pkgs.ocamlPackages.batteries ];
+  nativeBuildInputs = [
+    pkgs.ocamlPackages.batteries
+    pkgs.ocamlPackages.alcotest
+  ];
 }
